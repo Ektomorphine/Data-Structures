@@ -48,35 +48,3 @@ export interface IItem {
   id: number;
   value: string;
 }
-
-
-let stack = new Stack<IItem>();
-
-/////
-
-// console.log(stack.isEmpty(), ' | There should be true');
-// stack.push({
-//   id: 1,
-//   value: 'Psina',
-// });
-// console.log(stack.isEmpty(), ' | There should be false');
-// console.log(stack.length,  ' | There should be 1');
-// console.log(stack.pop(),  ' | There should be popped item');
-// console.log(stack.value);
-// stack.push({
-//   id: 1,
-//   value: 'Psina',
-// })
-// stack.push({
-//   id: 2,
-//   value: 'Psina Eblivaya',
-// })
-// console.log(stack.value);
-for (let i = 0; i < 10; i++) {
-  stack.push({
-    id: i,
-    value: `value-${i}`,
-  })
-}
-stack.swap();
-console.log(stack.value);

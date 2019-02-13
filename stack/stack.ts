@@ -7,9 +7,9 @@ export class Stack<T> {
     this._count++;
   }
 
-  public pop<T>(): Error | T {
+  public pop<T>(): T {
     if (this._count === 0) {
-      return new Error(`You can't pop item from empty stack`);
+      return <T>{};
     }
 
     this._count--;
@@ -42,9 +42,4 @@ export class Stack<T> {
   get value() {
     return this._storage;
   }
-}
-
-export interface IItem {
-  id: number;
-  value: string;
 }

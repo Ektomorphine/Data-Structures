@@ -11,7 +11,7 @@ var Stack = /** @class */ (function () {
     };
     Stack.prototype.pop = function () {
         if (this._count === 0) {
-            return new Error("You can't pop item from empty stack");
+            return {};
         }
         this._count--;
         var result = this._storage[this._count];

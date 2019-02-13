@@ -8,7 +8,7 @@ export class Stack<T> {
   }
 
   public pop<T>(): T {
-    if (this._count === 0) {
+    if (this.isEmpty()) {
       return <T>{};
     }
 
@@ -23,7 +23,7 @@ export class Stack<T> {
   }
 
   public isEmpty(): boolean {
-    return this._count === 0;
+    return !this._count;
   }
 
   public swap(): Error | void {

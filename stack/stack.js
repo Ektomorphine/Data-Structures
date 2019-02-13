@@ -10,7 +10,7 @@ var Stack = /** @class */ (function () {
         this._count++;
     };
     Stack.prototype.pop = function () {
-        if (this._count === 0) {
+        if (this.isEmpty()) {
             return {};
         }
         this._count--;
@@ -22,7 +22,7 @@ var Stack = /** @class */ (function () {
         return this._storage[this._count];
     };
     Stack.prototype.isEmpty = function () {
-        return this._count === 0;
+        return !this._count;
     };
     Stack.prototype.swap = function () {
         if (this._count <= 1) {

@@ -18,9 +18,6 @@ var Stack = /** @class */ (function () {
         delete this._storage[this._count];
         return result;
     };
-    Stack.prototype.peek = function () {
-        return this._storage[this._count];
-    };
     Stack.prototype.isEmpty = function () {
         return !this._count;
     };
@@ -32,6 +29,13 @@ var Stack = /** @class */ (function () {
         this._storage[this._count - 2] = this._storage[this._count - 1];
         this._storage[this._count - 1] = temp;
     };
+    Object.defineProperty(Stack.prototype, "peek", {
+        get: function () {
+            return this._storage[this._count - 1];
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(Stack.prototype, "length", {
         get: function () {
             return this._count;

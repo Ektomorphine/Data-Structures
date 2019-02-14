@@ -1,6 +1,6 @@
 export class Stack<T> {
   private _count: number = 0;
-  private _storage = {};
+  private _storage = <T>{};
 
   public push(item: T): void {
     this._storage[this._count] = item;
@@ -18,10 +18,6 @@ export class Stack<T> {
     return result;
   }
 
-  public peek(): T {
-    return this._storage[this._count];
-  }
-
   public isEmpty(): boolean {
     return !this._count;
   }
@@ -35,11 +31,15 @@ export class Stack<T> {
     this._storage[this._count - 1] = temp;
   }
 
-  get length() {
+  public get peek(): T {
+    return this._storage[this._count - 1];
+  }
+
+  public get length(): number {
     return this._count;
   }
 
-  get value() {
+  public get value(): T {
     return this._storage;
   }
 }
